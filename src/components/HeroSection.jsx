@@ -1,8 +1,10 @@
 import Spline from "@splinetool/react-spline";
 import { motion } from "framer-motion";
+import { ToastContainer, toast } from "react-toastify";
 const HeroSection = () => {
+  const Hello = () => toast("Hello How are you doing..");
   return (
-    <section className="h-screen bg-gradient-to-b from-violet-900 to-black flex xl:flex-row flex-col-reverse items-center justify-between lg:px-24 px-10 relative overflow-hidden">
+    <section className="h-screen  flex xl:flex-row flex-col-reverse items-center justify-between lg:px-24 px-10 relative overflow-hidden">
       {/* left section */}
       <div className="z-40 xl:mb-0 mb-[20%]">
         <motion.h1
@@ -37,12 +39,14 @@ const HeroSection = () => {
           time.
         </motion.p>
       </div>
-
       {/* Right Section */}
+
       <Spline
+        onClick={() => Hello()}
         className="absolute xl:right-[-28%] right-0 top-[-20%] lg:top-0"
-        scene="https://prod.spline.design/k4XQaqxbQCDOeTtz/scene.splinecode"
+        scene="https://prod.spline.design/24IHkWtiduCMn2vw/scene.splinecode"
       />
+      <ToastContainer />
     </section>
   );
 };

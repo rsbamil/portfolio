@@ -13,3 +13,6 @@ body{
     cursor: none;
 }
 
+body::-webkit-scrollbar{
+    display: none;
+}

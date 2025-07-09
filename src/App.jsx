@@ -2,27 +2,33 @@ import React from "react";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import CustomCursor from "./components/CustomCursor";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./components/pages/Home";
-import About from "./components/pages/About";
-import Contact from "./components/pages/Contact";
-import Experience from "./components/pages/Experience";
-import Projects from "./components/pages/Projects";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Skills from "./components/Skills";
+import Contact from "./components/Contact";
+import { Element } from "react-scroll"; // ✅ Add this
 
 const App = () => {
   return (
-    <Router>
+    <div className="bg-gradient-to-b from-violet-900 to-black">
       <Header />
-      <HeroSection />
+      <Element name="home">
+        <HeroSection />
+      </Element>
       <CustomCursor />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/experience" element={<Experience />} />
-        <Route path="/projects" element={<Projects />} />
-      </Routes>
-    </Router>
+      <Element name="about">
+        <About />
+      </Element>
+      <Element name="projects">
+        <Projects />
+      </Element>
+      <Element name="skills">
+        <Skills />
+      </Element>
+      <Element name="contact">
+        <Contact />
+      </Element>
+    </div>
   );
 };
 

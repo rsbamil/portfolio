@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { FiGithub, FiTwitter, FiLinkedin, FiMenu, FiX } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 
 const Header = () => {
   // toggle mobile menu button
@@ -13,7 +13,7 @@ const Header = () => {
   const openContactForm = () => setContactFormOpen(true);
   const closeContactForm = () => setContactFormOpen(false);
   return (
-    <header className="absolute w-full z-50 transition-all duration-300">
+    <header className=" w-full z-50 transition-all duration-300 fixed top-0 left-0 backdrop-blur-md bg-transparent ">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 md:h-20">
         {/* logo */}
         <motion.div
@@ -29,18 +29,18 @@ const Header = () => {
           className="flex items-center"
         >
           <div className="h-10 w-10 rounded-xl bg-gradient-to-r from-gray-500 to-gray-100 flex items-center justify-center text-purple-600 font-bold text-xl mr-3">
-            R
+            <img src="/logo.jpg" className="rounded-xl h-10 w-10" alt="" />
           </div>
           <span className="text-xl font-bold bg-gradient-to-r from-gray-300 to-gray-100  bg-clip-text text-transparent">
-            Kumar
+            Developer
           </span>
         </motion.div>
 
         {/* desktop navigation */}
         <nav className="lg:flex hidden space-x-8">
-          {["Home", "About", "Projects", "Experience", "Contact"].map(
+          {["Home", "About", "Projects", "Skills", "Contact"].map(
             (item, index) => (
-              <motion.a
+              <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
@@ -49,13 +49,18 @@ const Header = () => {
                   damping: 20,
                   delay: 0.7 + index * 0.2,
                 }}
-                href={`/${item.toLowerCase()}`}
                 key={item}
-                className="relative text-gray-800 dark:text-gray-200 hover:text-violet-600 dark:hover:text-violet-400 font-medium transition-colors duration-300 group"
               >
-                {item}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-violet-600 group-hover:w-full transition-all duration-300"></span>
-              </motion.a>
+                <Link
+                  to={`${item.toLowerCase()}`}
+                  smooth={true}
+                  duration={500}
+                  className="relative text-gray-800 dark:text-gray-200 hover:text-violet-600 dark:hover:text-violet-400 font-medium transition-colors duration-300 group"
+                >
+                  {item}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-violet-600 group-hover:w-full transition-all duration-300"></span>
+                </Link>
+              </motion.div>
             )
           )}
         </nav>
@@ -65,7 +70,8 @@ const Header = () => {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1.3, duration: 0.8 }}
-            href="#"
+            href="https://github.com/rsbamil"
+            target="_blank"
             className="text-gray-700 dark:text-gray-300 hover:text-violet-600  dark:hover:text-violet-400 transition-colors duration-300"
           >
             <FiGithub className="w-5 h-5" />
@@ -74,7 +80,8 @@ const Header = () => {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1.3, duration: 0.8 }}
-            href="#"
+            href="https://x.com/GWorld97878"
+            target="_blank"
             className="text-gray-700 dark:text-gray-300 hover:text-violet-600  dark:hover:text-violet-400 transition-colors duration-300"
           >
             <FiTwitter className="w-5 h-5" />
@@ -83,7 +90,8 @@ const Header = () => {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1.3, duration: 0.8 }}
-            href="#"
+            href="www.linkedin.com/in/rohit-kumar-05697a372"
+            target="_blank"
             className="text-gray-700 dark:text-gray-300 hover:text-violet-600  dark:hover:text-violet-400 transition-colors duration-300"
           >
             <FiLinkedin className="w-5 h-5" />
@@ -141,28 +149,40 @@ const Header = () => {
         className="md:hidden overflow-hidden bg-white dark:bg-gray-900 shadow-lg px-4 py-5 space-y-5"
       >
         <nav className="flex flex-col space-y-3">
-          {["Home", "About", "Projects", "Experience", "Contact"].map(
-            (item) => (
-              <a
-                onClick={toggleMenu}
-                className="text-gray-300 font-medium py-2"
-                key={item}
-                href="#"
-              >
-                {item}
-              </a>
-            )
-          )}
+          {["Home", "About", "Projects", "Skills", "Contact"].map((item) => (
+            <Link
+              to={`${item.toLowerCase()}`}
+              smooth={true}
+              duration={500}
+              onClick={toggleMenu}
+              className="text-gray-300 font-medium py-2"
+              key={item}
+            >
+              {item}
+            </Link>
+          ))}
         </nav>
         <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
           <div className="flex space-x-5">
-            <a onClick={toggleMenu} href="#">
+            <a
+              onClick={toggleMenu}
+              href="https://github.com/rsbamil"
+              target="_blank"
+            >
               <FiGithub className="w-5 h-5 text-gray-300" />
             </a>
-            <a onClick={toggleMenu} href="#">
+            <a
+              onClick={toggleMenu}
+              href="https://x.com/GWorld97878"
+              target="_blank"
+            >
               <FiTwitter className="w-5 h-5 text-gray-300" />
             </a>
-            <a onClick={toggleMenu} href="#">
+            <a
+              onClick={toggleMenu}
+              href="www.linkedin.com/in/rohit-kumar-05697a372"
+              target="_blank"
+            >
               <FiLinkedin className="w-5 h-5 text-gray-300" />
             </a>
           </div>
@@ -185,22 +205,15 @@ const Header = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{
-              duration: 0.5,
-            }}
-            className="fixed inset-0 bg-black/50 background-blur-sm z-50 flex items-center justify-center p-4"
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-[9999]   flex justify-center items-start pt-30 backdrop-blur-2xl p-4"
           >
             <motion.div
-              initial={{ scale: 0.8, opacity: 0, y: 30 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.8, opacity: 0, y: 30 }}
-              transition={{
-                type: "spring",
-                damping: 30,
-                stiffness: 200,
-                duration: 0.8,
-              }}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-xl w-full max-w-md p-6"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 200, damping: 20 }}
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-xl w-full max-w-md p-6 mt-16"
             >
               <div className="flex justify-between items-center mb-4">
                 <h1 className="text-2xl font-bold text-gray-300">
@@ -210,48 +223,37 @@ const Header = () => {
                   <FiX className="w-5 h-5 text-gray-300 font-extrabold" />
                 </button>
               </div>
-              {/* input forms */}
+
+              {/* Contact Form */}
               <form className="space-y-4">
                 <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-gray-300 mb-1"
-                  >
+                  <label className="block text-sm font-medium text-gray-300 mb-1">
                     Name
                   </label>
                   <input
                     type="text"
-                    id="name"
                     placeholder="Your name"
-                    className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-violet-500 bg-gray-700"
+                    className="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-700 focus:ring-2 focus:ring-violet-500 focus:border-violet-500"
                   />
                 </div>
                 <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-gray-300 mb-1"
-                  >
+                  <label className="block text-sm font-medium text-gray-300 mb-1">
                     Email
                   </label>
                   <input
                     type="email"
-                    id="email"
-                    placeholder="Your Email"
-                    className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-violet-500 bg-gray-700"
+                    placeholder="Your email"
+                    className="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-700 focus:ring-2 focus:ring-violet-500 focus:border-violet-500"
                   />
                 </div>
                 <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium text-gray-300 mb-1"
-                  >
+                  <label className="block text-sm font-medium text-gray-300 mb-1">
                     Message
                   </label>
                   <textarea
                     rows="4"
-                    id="message"
                     placeholder="How can we help you?"
-                    className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-violet-500 bg-gray-700"
+                    className="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-700 focus:ring-2 focus:ring-violet-500 focus:border-violet-500"
                   />
                 </div>
                 <motion.button
