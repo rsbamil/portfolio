@@ -1,6 +1,7 @@
 import Spline from "@splinetool/react-spline";
 import { motion } from "framer-motion";
 import { ToastContainer, toast } from "react-toastify";
+import BagEffectName from "./BagEffectName";
 const HeroSection = () => {
   const Hello = () => toast("Hello How are you doing..");
   return (
@@ -40,13 +41,7 @@ const HeroSection = () => {
         </motion.p>
       </div>
       {/* Right Section */}
-
-      <Spline
-        onClick={() => Hello()}
-        className="absolute xl:right-[-28%] right-0 top-[-20%] lg:top-0"
-        scene="https://prod.spline.design/24IHkWtiduCMn2vw/scene.splinecode"
-      />
-      <ToastContainer />
+      <BagEffectName />
     </section>
   );
 };
