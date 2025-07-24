@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, time, useInView } from "framer-motion";
+import { button } from "framer-motion/client";
 
 const Projects = () => {
   const projectDetails = [
@@ -14,7 +15,7 @@ const Projects = () => {
     {
       title: "Employee Management System ",
       description:
-        "It is the employee management system that helps to manage the employees in a company.",
+        "It is the employee management system that helps to manage the employees.",
       image: "/EMS.jpg",
       view: "https://ems-sigma-pearl.vercel.app/",
       github: "https://github.com/rsbamil/Employee-Management-System",
@@ -49,6 +50,14 @@ const Projects = () => {
       image: "/media-player.png",
       view: "#",
       github: "https://github.com/rsbamil/Media-Player",
+    },
+    {
+      title: "Hospital Management System",
+      description:
+        "It is a web application fully responsive and interactive hospital management system.",
+      image: "/hospital.png",
+      view: "https://hospital-management-system-2fwjaauf2.vercel.app",
+      github: "https://github.com/rsbamil/Hospital-Management-System",
     },
   ];
   const gridRef = useRef(null);
@@ -88,7 +97,7 @@ const Projects = () => {
             variants={itemVariants}
             transition={{ delay: index * 0.3, duration: 1.5 }}
             key={index}
-            className=" hover:scale-105 duration-300 transition-all ease-in rounded-md overflow-hidden w-[300px] space-y-2 "
+            className=" hover:scale-105 duration-300 transition-all ease-in rounded-md overflow-hidden w-[300px] space-y-2  hover:drop-shadow-[0_0_20px_rgba(240,130,230,0.8)]"
           >
             <img
               className="w-[300px] h-[300px] object-cover"
@@ -100,13 +109,17 @@ const Projects = () => {
               {project.view == "#" ? (
                 "Preview Not Available"
               ) : (
-                <a href={project.view} target="_blank">
-                  View
-                </a>
+                <button className="bg-violet-600 rounded-md p-1 hover:bg-violet-900 transition-all ease-in duration-300">
+                  <a href={project.view} target="_blank">
+                    View
+                  </a>
+                </button>
               )}
-              <a href={project.github} target="_blank">
-                Github Link
-              </a>
+              <button className="bg-blue-600 rounded-md p-1 hover:bg-blue-900 transition-all ease-in duration-300">
+                <a href={project.github} target="_blank">
+                  Github Link
+                </a>
+              </button>
             </div>
           </motion.div>
         ))}
