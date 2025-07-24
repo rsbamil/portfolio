@@ -1,14 +1,70 @@
 Live Demo --> http://portfolio-blns.vercel.app
 
-# React + Vite
+# 🚀 PORTFOLIO
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **Empowering Creativity Through Seamless Digital Experiences**
 
-Currently, two official plugins are available:
+![](https://img.shields.io/github/last-commit/rsbamil/portfolio?style=flat-square)![](https://img.shields.io/github/languages/top/rsbamil/portfolio?color=blue\&style=flat-square)![](https://img.shields.io/github/languages/count/rsbamil/portfolio?style=flat-square)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+***
 
-## Expanding the ESLint configuration
+## 🔧 Built With
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+![](https://img.shields.io/badge/JSON-000?style=for-the-badge\&logo=json\&logoColor=white)![](https://img.shields.io/badge/Markdown-000?style=for-the-badge\&logo=markdown\&logoColor=white)![](https://img.shields.io/badge/NPM-CB3837?style=for-the-badge\&logo=npm\&logoColor=white)
+![](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge\&logo=javascript\&logoColor=black)
+![](https://img.shields.io/badge/React-61DAFB?style=for-the-badge\&logo=react\&logoColor=black)
+![](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge\&logo=vite\&logoColor=white)
+![](https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge\&logo=eslint\&logoColor=white)
+![](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge\&logo=tailwind-css\&logoColor=white)
+
+***
+
+## 📑 Table of Contents
+
+* [📌 Overview](#-overview)
+* [🚀 Getting Started](#-getting-started)
+* [🧰 Prerequisites](#-prerequisites)
+* [⚙️ Installation](#️-installation)
+* [💻 Usage](#-usage)
+* [🧪 Testing](#-testing)
+* [📄 License](#-license)
+
+***
+
+## 📌 Overview
+
+**Portfolio** is a modern React-based starter template optimized for rapid development and visually stunning portfolios. Powered by **Vite** and styled with **Tailwind CSS**, it offers modular components and a scalable design system to build high-performance personal websites.
+
+### 💡 Why Portfolio?
+
+* ⚡ **Fast Development:** Built with [Vite](https://vitejs.dev) for blazing-fast reloads and bundling.
+* 🎨 **Modern Styling:** Utility-first design via [Tailwind CSS](https://tailwindcss.com).
+* 🧠 **Code Quality:** Enforced best practices with [ESLint](https://eslint.org).
+* 🧩 **Component-Driven:** Sections like `Hero`, `About`, `Projects`, `Skills` for dynamic content.
+* ✨ **Animated UI:** Custom cursors, scroll effects, and immersive visuals.
+
+***
+
+## 🚀 Getting Started
+
+Follow these steps to set up and run the project locally.
+
+### 🧰 Prerequisites
+
+Ensure you have the following installed:
+
+* **Programming Language:** JavaScript (ES6+)
+* **Package Manager:** [npm](https://www.npmjs.com/)
+
+***
+
+## ⚙️ Installation
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/rsbamil/portfolio
+
+   cd portfolio
+
+   npm i
+   ```
